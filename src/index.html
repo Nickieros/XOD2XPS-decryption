@@ -2,9 +2,24 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="./WebViewer/samples/style.css">
-    <script src="./WebViewer/lib/webviewer.min.js"></script>
-    <script src='./WebViewer/samples/old-browser-checker.js'></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/webviewer.min.js"></script>
+    <style>
+        #download {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /*justify-self: center;*/
+            height: 100%;
+        }
+
+        #downloadButton {
+            padding: 1em;
+            font-size: 1.5em;
+        }
+
+    </style>
 </head>
 <body>
 <header>
@@ -14,7 +29,7 @@
     <h1>Controls</h1>
     <h2>Choose a file to view</h2>
     <select id="select" style="width: 100%">
-        <option value="./WebViewer/samples/files/demo-annotated.xod">./samples/files/demo-annotated.xod</option>
+        <option value="./xod_files/demo-annotated.xod">./xod_files/demo-annotated.xod</option>
         <option value="https://pdftron.s3.amazonaws.com/downloads/pl/sheet_music.xod">https://pdftron.s3.amazonaws.com/downloads/pl/sheet_music.xod</option>
         <option value="https://pdftron.s3.amazonaws.com/downloads/pl/encrypted-foobar12.xod">https://pdftron.s3.amazonaws.com/downloads/pl/encrypted-foobar12.xod</option>
     </select>
@@ -31,8 +46,11 @@
     <p>You can convert a wide range of document formats (including PDF) into XOD using the <a href="https://pdftron.com/pdf-sdk/" target="_blank">PDFTron SDK</a> in your custom server. When converting, you can add a password to encrypt it for extra security. See <a href="https://pdftron.com/documentation/web/guides/advanced/xod-and-encryption" target="_blank">XOD and encryption</a> for details.</p>
 </aside>
 <div id="viewer"></div>
-<script src="./WebViewer/samples/menu-button.js"></script>
-<script src="./WebViewer/samples/viewing/viewing-with-custom-server/viewing-with-custom-server.js"></script>
+<!--    <div id="download"><input type="button" value="Download (save the file locally)" id="downloadButton"></div>-->
+
+
+<script src="./js/menu-button.js"></script>
+<script src="./js/viewing-with-custom-server.js"></script>
 
 </body>
 </html>

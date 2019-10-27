@@ -1,7 +1,7 @@
 {
-  "name": "Pdf_encode_decode",
+  "name": "Decrypt_XOD_and_save2PDF\n",
   "version": "1.0.0",
-  "description": "Pdf_encode_decode",
+  "description": "Decrypt_XOD_and_save2PDF\n",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
