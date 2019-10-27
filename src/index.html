@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/webviewer.min.js"></script>
+    <script src="./js/min.js"></script>
     <style>
         #download {
             display: flex;
@@ -29,9 +29,9 @@
     <h1>Controls</h1>
     <h2>Choose a file to view</h2>
     <select id="select" style="width: 100%">
-        <option value="./xod_files/demo-annotated.xod">./xod_files/demo-annotated.xod</option>
-        <option value="https://pdftron.s3.amazonaws.com/downloads/pl/sheet_music.xod">https://pdftron.s3.amazonaws.com/downloads/pl/sheet_music.xod</option>
-        <option value="https://pdftron.s3.amazonaws.com/downloads/pl/encrypted-foobar12.xod">https://pdftron.s3.amazonaws.com/downloads/pl/encrypted-foobar12.xod</option>
+        <option value="./xod/encrypted-foobar12.xod">encrypted-foobar12.xod</option>
+        <option value="./xod/demo-annotated.xod">demo-annotated.xod</option>
+        <option value="./xod/sheet_music.xod">sheet_music.xod</option>
     </select>
     <h2>Or pass a url to a document</h2>
     <form id="url-form">
@@ -42,15 +42,13 @@
     <input id="file-picker" type="file" accept=".xod" />
     <hr />
     <h1>Instructions</h1>
-    <p>Use the dropdown above to view local or remote XOD documents. XOD is a web optimized XPS format, specifically designed for fast and efficient web vieweing.</p>
-    <p>You can convert a wide range of document formats (including PDF) into XOD using the <a href="https://pdftron.com/pdf-sdk/" target="_blank">PDFTron SDK</a> in your custom server. When converting, you can add a password to encrypt it for extra security. See <a href="https://pdftron.com/documentation/web/guides/advanced/xod-and-encryption" target="_blank">XOD and encryption</a> for details.</p>
+    <p>Use button below to download pdf</p>
+    <div id="download"><input type="button" value="Download (save the file locally)" id="downloadButton"></div>
 </aside>
 <div id="viewer"></div>
-<!--    <div id="download"><input type="button" value="Download (save the file locally)" id="downloadButton"></div>-->
-
 
 <script src="./js/menu-button.js"></script>
-<script src="./js/viewing-with-custom-server.js"></script>
+<script src="./js/app.js"></script>
 
 </body>
 </html>
