@@ -1,1 +1,1 @@
-# XOD decryption and assembling to XPS
+# XOD decrypting and assembling to XPS
