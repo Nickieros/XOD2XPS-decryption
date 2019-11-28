@@ -27,7 +27,8 @@ You can contact me to get a newer version of XOD2XPS-decryption with significant
 
 ## Description
 ### The problem
-XOD files (Open XML Documents) can be encrypted at conversion time and PDFTron WebViewer can view these documents when supplied with the password. These is a one of certain forms of DRM which restricts users to only be able to view documents inside the viewer and not simply download the files to view any time outside of it. According to the DRM ideology, there is neither function to decrypt whole XOD file nor save decrypted parts into a single file. The only way to save document is the print function which can save all page canvases as images on a  virtual PDF/XPS printer without any text inside and without the possibility of text search
+XOD files (Open XML Documents) can be encrypted at conversion time and PDFTron WebViewer can view these documents when supplied with the password. These is a one of certain forms of DRM which restricts users to only be able to view documents inside the viewer and not simply download the files to view any time outside of it.
+According to the DRM ideology, there is neither function in PDFTron library to decrypt whole XOD file nor save decrypted parts into a single file. The only way to save document is the print function which can save all page canvases as images on a  virtual PDF/XPS printer without any text inside and without the possibility of text search
 
 ### Goals
 Decrypt XOD files and download them as XPS files to view any time outside of PDFTron WebView interface
