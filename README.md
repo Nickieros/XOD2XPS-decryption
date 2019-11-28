@@ -31,7 +31,7 @@ XOD files (Open XML Documents) can be encrypted at conversion time and PDFTron W
 According to the DRM ideology, there is neither function in PDFTron library to decrypt whole XOD file nor save decrypted parts into a single file. The only way to save document is the print function which can save all page canvases as images on a  virtual PDF/XPS printer without any text inside and without the possibility of text search
 
 ### Goals
-Decrypt XOD files and download them as XPS files to view any time outside of PDFTron WebView interface
+Decrypt XOD files and download them as XPS files to view any time outside of PDFTron WebView interface. Decrypted and saved files should contain graphics and text in the same resolution and location as the original encrypted files and text should be the same, accurate and searchable
 
 ### Tasks
 - Decrypt XOD files
