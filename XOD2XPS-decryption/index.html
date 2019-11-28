@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title class="title sample">Save decoded XOD files</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./lib/webviewer.js"></script>
+    <script src="./lib/core/external/jquery-3.2.1.min.js"></script>
+    <script src="./lib/core/CoreControls.js"></script>
+    <script src="./lib/ui-legacy/external/FileSaver.js"></script>
+    <script src="./js/Setup.js"></script>
+    <script src="./js/modernizr.custom.min.js"></script>
+
+    <script type="text/javascript" src="./js/jszip.js"></script>
+    <script type="text/javascript" src="./js/jszip-utils.min.js"></script>
+    <style>
+
+        aside {
+            height: 100%;
+            margin-top: 0;
+            line-height: 1.2em;
+            padding-top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #viewer {
+            margin-top: 0;
+            height: 100%;
+        }
+
+        select {
+            text-align: left;
+            /*text-align-last: center;*/
+            width: 100%;
+            margin: 0;
+            padding: .2em 0;
+        }
+
+        option {
+            font-size: .9em;
+        }
+
+        ol {
+            list-style-type: none;
+            counter-reset: item;
+            margin: 0;
+            padding: 0;
+        }
+
+        ol > li {
+            display: table;
+            counter-increment: item;
+            margin-bottom: 0.6em;
+        }
+
+        ol > li:before {
+            content: counters(item, ".") ". ";
+            display: table-cell;
+            padding-right: 0.6em;
+        }
+
+        li ol > li {
+            margin: 0;
+        }
+
+        li ol > li:before {
+            content: counters(item, ".") " ";
+        }
+
+        #mode input[type="checkbox"]  {
+            margin-left: 0;
+        }
+
+        #speed {
+            line-height: 3em;
+        }
+
+        #speed input {
+            vertical-align: middle;
+            width: 15em;
+        }
+
+        #buttons {
+            text-align: center;
+        }
+
+        #buttons input {
+            margin: .5em;
+        }
+
+        #buttonStartDownload {
+            font-size: 2vh;
+            font-family: sans-serif;
+            width: 2em;
+            display: inline;
+        }
+
+        #buttonStopDownload {
+            font-size: 2vh;
+            font-family: monospace;
+            width: 2em;
+            display: inline;
+        }
+
+        input[type="button"] {
+            height: 2em;
+            margin: 1em;
+        }
+
+        h1,
+        h2,
+        h3 {
+            text-align: left;
+            margin-bottom: .5em;
+        }
+
+        input[type="text"] {
+            display: inline;
+            width: 10.2em;
+            margin:  .5em 0 .5em 0;
+            height: 1.7em;
+            line-height: 1;
+            padding: 0 .3em;
+        }
+
+        input[id="buttonReapplyPassword"] {
+            margin: 0;
+        }
+
+        #progressBarParts,
+        #progressBarFiles {
+            border: 0 transparent;
+            border-radius: .2em;
+            text-align: center;
+            line-height: 2em;
+            margin-bottom: .5em;
+            background: linear-gradient(to right, rgb(208, 222, 255) 0%, rgb(208, 222, 255) 0%, rgb(242, 242, 242) 0%);
+            font-size: 0;
+            transition: font-size 1s linear;
+        }
+
+        #log {
+            width: 100%;
+        }
+
+        #textareaLog {
+            width: 100%;
+        }
+
+        #control {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<aside>
+    <div id="instructions">
+        <h3>Please follow the necessary steps before starting</h3>
+        <ol>
+            <li>Copy encrypted "XOD" files to "./UserData/input_xod" folder</li>
+            <li>Configure Google Chrome
+                <ol>
+                    <li>select a location to save files: "Settings > Advanced > Downloads"</li>
+                    <li>turn off the "Ask where to save each file before downloading"</li>
+                    <li>open DevTools by right-clicking on this text and select "Inspect". If DevTools bothers you, decrease it's size or undock into separate window and minimize it</li>
+                </ol>
+            </li>
+            <li>Drag and drop files into the current window to create a list of files to be processed (avoid dropping files into DevTools window)</li>
+        </ol>
+    </div>
+    <div id="control">
+        <select id="select" size="15">
+        </select>
+        <div id="buttons"><input type="button" value="►" id="buttonStartDownload"><input type="button" value="■" id="buttonStopDownload"><br><input type="button" value="Restart" id="buttonRestart" onclick="location.reload();"></div>
+        <div id="progressBarParts">parts intercepted: <span>0 of 0</span></div>
+        <div id="progressBarFiles">files processed: <span>0 of 0</span></div>
+        <div id="password">password: <input type="text" value="foobar12" id="textPassword"><input type="button" value="Reapply" id="buttonReapplyPassword"></div>
+        <div id="speed"><input type="range" value="1" min=".1" max="4" step="0.1" id="sliderSpeed"> speed: x<span id="textSpeed">1.0</span></div>
+        <ul>
+            <li>Speed Slider: experimental setting. It is a coefficient that control delays between internal algorithm commands. Recommend setting: x1, a higher value can't guarantee successfully result. You can adjust slider position according to performance of your PC. Moving slider to the right will decrease program execution time, but if the data did not have time to prepare for saving, the document will be processed again that can turn in some cases into endless processing</li>
+        </ul>
+    </div>
+</aside>
+<div id="viewer"></div>
+
+<script type="text/javascript" src="./app.js"></script>
+
+</body>
+</html>
