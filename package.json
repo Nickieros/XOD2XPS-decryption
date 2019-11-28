@@ -14,6 +14,7 @@
     "@babel/core": "^7.6.4",
     "@babel/node": "^7.6.3",
     "@babel/preset-env": "^7.6.3",
+    "@pdftron/pdfnet-node": "^7.0.1-1",
     "babel-loader": "^8.0.6",
     "babel-polyfill": "^6.26.0",
     "eslint": "^6.6.0",

@@ -12,3 +12,5 @@ echo {"presets": ["@babel/preset-env"]} > .babelrc
 call npm install stylelint --save-dev
 call npm install stylelint-config-recommended --save-dev
 echo {"extends": "stylelint-config-recommended"} > .stylelintrc
+
+call npm install @pdftron/pdfnet-node --save-dev
