@@ -5,7 +5,7 @@ XOD to XPS decryption: decrypts Open XML Documents encrypted by PDFTron and save
 
 ## Overview
 This is a SPA that can be hosted on any web-server. It decrypts Open XML Documents and save them to XPS format according to ECMA-388 specification (XOD to XPS decryption). Only files encrypted by PDFTron are supported.
-You can contact me to get a newer version of XOD2XPS-decryption with greatly improved performance and bug fixing when some files processing lead to an endless loop
+You can contact me to get a newer version of XOD2XPS-decryption with significantly improved performance and bug fixing when some files processing lead to an endless loop
 
 ## Table of contents
 - [Overview](#Overview)
