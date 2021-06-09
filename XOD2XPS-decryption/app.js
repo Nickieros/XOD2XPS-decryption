@@ -110,7 +110,7 @@ function handleDrop(ev) {
     fileNames.forEach(fileName => {
         const option = document.createElement("option");
         option.innerText = fileName;
-        option.value = `../../../../XOD2XPS-decryption/userData/input_xod/${fileName}`;
+        option.value = `../../../.${inputDirectory}${fileName}`;
         document.getElementById("select").appendChild(option);
     });
     instructions.style.display = "none";
