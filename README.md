@@ -63,7 +63,7 @@ None. The code is written in vanilla JavaScript
 ### Usage restrictions
 - Only encrypted files are supported
 - Only PDFTron encryption is supported
-- all encrypted files should have the same password
+- All encrypted files in the list should have the same password
 
 ## Video
 You can view how this application work in [this video](https://youtu.be/ZQOKGyjnfWU)
